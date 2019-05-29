@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 
 function App() {
-  return <div>afadfa</div>;
+  return <div>modern todo</div>;
 }
 
 export default App;

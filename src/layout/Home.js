@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
+import { firebase, db } from '../firebase/firebase';
 import Layout from '../component/Layout';
 import Header from '../component/Header';
 import TodoList from '../component/TodoList';
@@ -26,9 +27,13 @@ export const Divider = styled.div`
 
 function Home({ user }) {
   const [showAdd, setShowAdd] = useState(false);
+  const handleLogout = async () => {
+    await firebase.auth().signOut();
+    localStorage.clear();
+  };
   return (
     <React.Fragment>
-      <Header />
+      <Header handleLogout={handleLogout} />
       <Layout
         css={`
           position: relative;

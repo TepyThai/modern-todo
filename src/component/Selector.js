@@ -42,6 +42,7 @@ const colorStyles = {
 function Selector({ field, form, options, name, onChange, ...props }) {
   return (
     <Select
+      isSearchable={false}
       css={`
         margin-bottom: 10px;
       `}
